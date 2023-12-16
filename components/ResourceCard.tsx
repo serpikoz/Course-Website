@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,10 +7,10 @@ interface Props {
   title: string;
   image: string;
   downloadNumber: number;
-  slug: string;
+  downloadLink: string;
 }
 
-const ResourcesCard = ({ id, title, image, downloadNumber, slug }: Props) => {
+const ResourcesCard = ({ id, title, image, downloadNumber }: Props) => {
   return (
     <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[356px]">
       <Link href={`/resource/${id}`}>
@@ -35,7 +28,6 @@ const ResourcesCard = ({ id, title, image, downloadNumber, slug }: Props) => {
           <CardTitle className="text-white paragraph-semibold line-clamp-1 w-full text-left">
             {title}
           </CardTitle>
-          <CardDescription>Card Description</CardDescription>
         </CardHeader>
       </Link>
 
@@ -44,6 +36,13 @@ const ResourcesCard = ({ id, title, image, downloadNumber, slug }: Props) => {
           <Image src="/downloads.svg" width={20} height={20} alt="content" />
           {`${downloadNumber}`}
         </div>
+        <Link
+          href={`/resource/${id}`}
+          className="flex-center text-gradient_purple-blue body-semibold gap-1.5"
+        >
+          Download Now
+          <Image src="/arrow-blue.svg" width={13} height={10} alt="arrow" />
+        </Link>
       </CardContent>
     </Card>
   );
