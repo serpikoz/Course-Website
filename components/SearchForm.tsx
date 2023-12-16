@@ -21,6 +21,8 @@ const SearchForm = () => {
         !ring-0 !ring-offstet-0 placeholder:text-white-800"
           type="text"
           placeholder="Search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </label>
     </form>
