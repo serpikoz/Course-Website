@@ -31,7 +31,6 @@ const Filters = () => {
       });
     }
 
-    console.log(newUrl); // <-- Debug için eklendi
     router.push(newUrl, { scroll: false });
   };
 

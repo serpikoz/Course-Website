@@ -47,7 +47,7 @@ export const getResources = async (params: GetResourcesParams) => {
         downloadLink,
         "image": poster.asset->url,
         views,
-       
+        slug,
         category
       }`
     );
